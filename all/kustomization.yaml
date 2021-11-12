@@ -1,0 +1,13 @@
+namespace: public
+
+resources:
+  - base
+
+patches:
+  - target:
+      kind: Deployment
+      name: docker-debug
+    patch:
+      - op: add
+        path: spec.template.spec.containers.0.env
+        value: http://otel-collector.monitoring.svc.cluster.local:9411
