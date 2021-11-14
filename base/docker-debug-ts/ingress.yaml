@@ -6,6 +6,10 @@ metadata:
   namespace: public
   labels:
 spec:
+  tls:
+    - hosts:
+      - docker-debug.FIXME
+      secretName: docker-debug-tls
   rules:
     - host: docker-debug.FIXME
       http:

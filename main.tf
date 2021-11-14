@@ -11,6 +11,9 @@ data "kustomization_overlay" "resources" {
     - op: replace
       path: /spec/rules/0/host
       value: docker-debug.${var.domain}
+    - op: replace
+      path: /spec/tls/0/hosts/0
+      value: docker-debug.${var.domain}
     EOF
   }
 
