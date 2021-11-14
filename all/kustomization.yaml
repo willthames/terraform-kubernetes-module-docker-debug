@@ -12,12 +12,12 @@ patches:
         path: /spec/template/spec/containers/0/env/-
         value:
           name: TRACING_URL
-          value: http://otel-collector.monitoring.svc.cluster.local:9411
+          value: http://tempo-tempo-distributed-distributor.monitoring.svc.cluster.local:14268
       - op: add
         path: /spec/template/spec/containers/1/env/-
         value:
           name: TRACING_URL
-          value: http://otel-collector.monitoring.svc.cluster.local:9411
+          value: http://tempo-tempo-distributed-distributor.monitoring.svc.cluster.local:14268
   - target:
       kind: Ingress
     path: patches/certificate.yaml
