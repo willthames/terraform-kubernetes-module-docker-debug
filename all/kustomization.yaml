@@ -18,3 +18,6 @@ patches:
         value:
           name: TRACING_URL
           value: http://otel-collector.monitoring.svc.cluster.local:9411
+  - target:
+      kind: Ingress
+    path: patches/certificate.yaml
