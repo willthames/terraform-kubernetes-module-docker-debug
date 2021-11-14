@@ -16,7 +16,7 @@ spec:
         app: docker-debug
     spec:
       containers:
-        - image: willthames/docker-debug:0.11-node-12.18.3
+        - image: willthames/docker-debug-ts:green-v0.1-0-ge67104e
           name: docker-debug
           resources:
             limits:
