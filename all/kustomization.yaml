@@ -1,13 +1,20 @@
 namespace: public
 
 resources:
-  - base
+  - ../base
 
 patches:
   - target:
       kind: Deployment
       name: docker-debug
-    patch:
+    patch: |-
       - op: add
-        path: spec.template.spec.containers.0.env
-        value: http://otel-collector.monitoring.svc.cluster.local:9411
+        path: /spec/template/spec/containers/0/env/-
+        value:
+          name: TRACING_URL
+          value: http://otel-collector.monitoring.svc.cluster.local:9411
+      - op: add
+        path: /spec/template/spec/containers/1/env/-
+        value:
+          name: TRACING_URL
+          value: http://otel-collector.monitoring.svc.cluster.local:9411
