@@ -2,6 +2,18 @@ data "kustomization_overlay" "resources" {
   resources = [
     "${path.module}/all"
   ]
+  patches {
+    target = {
+      kind = "Ingress"
+      name = "docker-debug"
+    }
+    patch = <<-EOF
+    - op: replace
+      path: /spec/rules/0/host
+      value: docker-debug.${var.domain}
+    EOF
+  }
+
 }
 
 # first loop through resources in ids_prio[0]

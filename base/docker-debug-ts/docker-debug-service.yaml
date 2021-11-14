@@ -4,7 +4,6 @@ metadata:
   creationTimestamp: null
   name: docker-debug
 spec:
-  type: NodePort
   ports:
     - port: 8080
       protocol: TCP

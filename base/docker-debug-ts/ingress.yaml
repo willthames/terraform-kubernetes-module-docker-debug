@@ -1,0 +1,19 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: docker-debug
+  namespace: public
+  labels:
+spec:
+  rules:
+    - host: docker-debug.FIXME
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: docker-debug
+                port:
+                  number: 8080

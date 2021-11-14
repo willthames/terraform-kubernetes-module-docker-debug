@@ -2,3 +2,4 @@ resources:
   - docker-debug-configmap.yml
   - docker-debug-deployment.yml
   - docker-debug-service.yaml
+  - ingress.yaml
